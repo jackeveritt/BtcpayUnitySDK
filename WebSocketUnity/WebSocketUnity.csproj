@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    	<HintPath Condition="Exists('..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\')">..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll </HintPath>
+    	<HintPath Condition="Exists('..\')">..\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\Unity\BTCPayUnity\Websocket-csharp-withUnityWebGLWebSocket\websocket-sharp.dll</HintPath>
+	<HintPath Condition="Exists('..\..\..\Unity\BTCPayUnity\Websocket-csharp-withUnityWebGLWebSocket\websocket-sharp.dll')">..\..\..\Unity\BTCPayUnity\Websocket-csharp-withUnityWebGLWebSocket\websocket-sharp.dll</HintPath>
+   	<HintPath Condition="Exists('..\dlls\websocket-sharp.dll')">..\dlls\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
 

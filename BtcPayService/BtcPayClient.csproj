@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -33,8 +33,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto">
+    	<HintPath Condition="Exists('..\dlls\')">..\dlls\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -45,14 +45,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Multiformats.Base">
-      <HintPath>..\packages\Multiformats.Base.dll</HintPath>
+      <HintPath>..\dlls\Multiformats.Base.dll</HintPath>
     </Reference>
     <Reference Include="NBitcoin">
-      <HintPath>..\packages\NBitcoinFromChris\NBitcoin.dll</HintPath>
+      <HintPath>..\dlls\NBitcoin.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\JsonNetUnity\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\dlls\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,14 +86,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    	<HintPath Condition="Exists('..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\')">..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll </HintPath>
+    	<HintPath Condition="Exists('..\')">..\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="WebSocketUnity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\WebSocketUnity\bin\Debug\netstandard2.0\WebSocketUnity.dll</HintPath>
     </Reference>
     <Reference Include="zxing.unity">
-      <HintPath>..\packages\zxing.unity.dll</HintPath>
+      <HintPath>..\dlls\zxing.unity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

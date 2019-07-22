@@ -7,7 +7,8 @@
 
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    	<HintPath Condition="Exists('..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\')">..\..\..\..\..\Program Files\Unity2018\Editor\Data\Managed\UnityEngine.dll </HintPath>
+    	<HintPath Condition="Exists('..\')">..\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
 
